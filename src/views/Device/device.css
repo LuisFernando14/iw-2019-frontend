@@ -1,0 +1,27 @@
+body {
+    background-color: #E5E9F2;
+}
+
+#mainBanner {
+    background-color: #005282;
+    color: #ffffff;
+    font-family: Calibri, serif;
+    height: 100px;
+    width: 100%;
+}
+
+#mainBannerText {
+    padding-top: 55px;
+    padding-left: 1em;
+    text-align: left;
+}
+
+#logoImg {
+    height: 60%;
+    width: 65%;
+    vertical-align: sub;
+}
+
+#btnSave {
+    background-color: #47525E;
+}

@@ -13,6 +13,16 @@ export default {
   name: 'home',
   components: {
     HelloWorld
+  },
+  data () {
+    return {}
+  },
+  created () {
+    this.$http.get('/api/users').then(res => {
+      console.log(res)
+      // this.questions = res.data
+      return res.data
+    })
   }
 }
 </script>

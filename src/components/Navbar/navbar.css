@@ -1,0 +1,14 @@
+#profileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #512DA9;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+}
+
+nav {
+    height: 85px; /*Posiblemente lo vaya a quitar*/
+}
