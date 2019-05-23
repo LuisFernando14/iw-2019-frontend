@@ -39,7 +39,7 @@
                 <span v-else>Deshabilitado</span>
               </td>
               <td>
-                <toggle-button :value="device.isOn" @change="cambio" :sync="true" :labels="{checked: 'ON', unchecked: 'OFF'}"/>
+                <toggle-button :id="device.id" :value="device.isOn" @change="cambio($event, device)" :sync="true" :labels="{checked: 'ON', unchecked: 'OFF'}"/>
               </td>
               <td>Modificar | Borrar</td>
             </tr>

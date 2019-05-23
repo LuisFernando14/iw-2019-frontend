@@ -10,11 +10,11 @@ export default {
     const actionHub = new Vue() // use new Vue instance as an event bus
 
     // Forward hub events through the event, so we can listen for them in the Vue components
-    connection.on('DeviceStatusChange', (questionId, score) => {
-      actionHub.$emit('score-changed', { questionId, score })
+    connection.on('DeviceIsOnChange', (device) => {
+      actionHub.$emit('isOn-changed', { device })
     })
-    connection.on('DeviceIsOnChange', (questionId, answerCount) => {
-      actionHub.$emit('answer-count-changed', { questionId, answerCount })
+    connection.on('DeviceStatusChange', (questionId, answerCount) => {
+      actionHub.$emit('status-changed', { questionId, answerCount })
     })
     /*
     connection.on('AnswerAdded', answer => {
