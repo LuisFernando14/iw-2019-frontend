@@ -10,7 +10,6 @@
           <img id="logoImg" class="rounded mx-auto d-block align-bottom" style="margin-top: 5em"
                src="https://datastorageusers.blob.core.windows.net/images/full-white-logo.png" alt="Equipo 48 logo">
         </div>
-
         <div class="col-sm">
           <div class="row">
             <input type="text" style="background-color: white" autofocus class="input input-group-text float-none"
@@ -22,49 +21,11 @@
           </div>
           <br>
           <div class="row">
-            <div class="col">
-              <img src="https://datastorageusers.blob.core.windows.net/devices-images/smart tv.png"
-                   class="list-group-item active image img-thumbnail" alt="Televisión">
+            <div v-for="device in devicesSelection" :key="device.id" class="col">
+              <img @click="selectItem(device.imageSrc, device.id)" :src="device.imageSrc"
+                   class="list-group-item image img-thumbnail" v-bind:class="{active: device.id === selected}" :alt="device.imageAlt">
               <div class="overlay">
-                <div class="text">Televisión</div>
-              </div>
-            </div>
-            <div class="col">
-              <img src="https://datastorageusers.blob.core.windows.net/devices-images/light.png"
-                   class="list-group-item image img-thumbnail" alt="Iluminación">
-              <div class="overlay">
-                <div class="text">Ilumnación</div>
-              </div>
-            </div>
-            <div class="col">
-              <img src="https://datastorageusers.blob.core.windows.net/devices-images/smartDoor.png"
-                   class="list-group-item image img-thumbnail" alt="Puerta">
-              <div class="overlay">
-                <div class="text">Puerta</div>
-              </div>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col">
-              <img src="https://datastorageusers.blob.core.windows.net/devices-images/videogame.png"
-                   class="list-group-item image img-thumbnail" alt="Consola">
-              <div class="overlay">
-                <div class="text">Videojuegos</div>
-              </div>
-            </div>
-            <div class="col">
-              <img src="https://datastorageusers.blob.core.windows.net/devices-images/fan.png"
-                   class="list-group-item image img-thumbnail" alt="Ventilador">
-              <div class="overlay">
-                <div class="text">Ventilación</div>
-              </div>
-            </div>
-            <div class="col">
-              <img src="https://datastorageusers.blob.core.windows.net/devices-images/music.png"
-                   class="list-group-item image img-thumbnail" alt="Música">
-              <div class="overlay">
-                <div class="text">Música</div>
+                <div class="text">{{device.itemText}}</div>
               </div>
             </div>
           </div>
@@ -72,9 +33,9 @@
         <div class="col-sm">
           <h2><label for="description">Descripción:</label></h2>
           <textarea placeholder="Descripción del dispositivo" name="description" id="description"
-                    v-model="device.Description" cols="30" rows="10"></textarea>
+                    v-model="device.Description" cols="50" rows="10"></textarea>
           <br>
-          <button id="btnSave" class="btn btn-lg btn-primary" :onclick="addDevice">Guardar</button>
+          <button id="btnSave" class="btn btn-lg btn-primary" @click="addDevice">Guardar</button>
         </div>
       </div>
     </div>

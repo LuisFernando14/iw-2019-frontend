@@ -30,9 +30,11 @@
             </tr>
             </thead>
             <tbody style="background-color: #ffffff">
-            <tr v-for="device in devices">
-              <td>{{device.name}}</td>
-              <td>Icono</td>
+            <tr v-for="device in devices" :key="device.id">
+              <td>
+                <a style="text-decoration: none; color: blue;" :href="'#/devices/view/'+device.id">{{device.name}}</a>
+              </td>
+              <td><img :src="device.iconName" style="width: 2em; height: 2em;" :alt="device.name"></td>
               <td>{{device.description}}</td>
               <td>
                 <span v-if="device.status">Habilitado</span>
@@ -51,7 +53,7 @@
       <div class="row">
         <div class="col-sm"></div>
         <div class="col-sm">
-          <button type="button" class="btn btn-lg" @click="goToAddDevice" style="background-color: #47525E; color: #ffffff;">Agregar dispositivo</button>
+          <a href="#/devices/add" class="btn btn-lg" style="background-color: #47525E; color: #ffffff;">Agregar dispositivo</a>
         </div>
         <div class="col-sm"></div>
       </div>

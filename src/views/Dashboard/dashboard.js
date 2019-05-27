@@ -71,9 +71,23 @@ export default {
       data = data.device
       console.log(data)
       // this.device.isOn = data.isOn
-      this.device = Object.assign({}, this.device, { isOn: data.isOn })
-      this.$set(this.device, 'isOn', data.isOn)
-      this.getDevices()
+      console.log('obj')
+      // console.log(this.devices.find);
+      console.log(this)
+      var idx = this.devices.findIndex(function (el) {
+        console.log(el)
+        return el.id === data.id
+      })
+      console.log(idx)
+      if (idx >= 0) {
+        this.devices[idx].isOn = data.isOn
+      } else {
+        console.log(idx)
+      }
+      // this.device = Object.assign({}, this.device, { isOn: data.isOn })
+      // this.$set(this.device, 'isOn', data.isOn)
+      // this.assign(this.device, data)
+      // this.getDevices()
     }
   },
   created () {
