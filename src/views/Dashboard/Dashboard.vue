@@ -4,7 +4,8 @@
       <div class="row">
         <div class="col-sm"></div>
         <div class="col-sm">
-          <img class="mb-4" src="https://datastorageusers.blob.core.windows.net/images/full-white-logo.png" alt="" width="72"
+          <img class="mb-4" src="https://datastorageusers.blob.core.windows.net/images/full-white-logo.png" alt=""
+               width="72"
                height="72">
         </div>
         <div class="col-sm"></div>
@@ -41,9 +42,18 @@
                 <span v-else>Deshabilitado</span>
               </td>
               <td>
-                <toggle-button :id="device.id" :value="device.isOn" @change="cambio($event, device)" :sync="true" :labels="{checked: 'ON', unchecked: 'OFF'}"/>
+                <toggle-button :id="device.id" :value="device.isOn" @change="cambio($event, device)" :sync="true"
+                               :labels="{checked: 'ON', unchecked: 'OFF'}"/>
               </td>
-              <td>Modificar | Borrar</td>
+              <td>
+                <a :href="'#/devices/update/'+device.id"><img src="https://datastorageusers.blob.core.windows.net/devices-images/pencil-update.png"
+                                alt="Modificar">
+                </a>
+                |
+                <a :href="'#/devices/delete/'+device.id"><img src="https://datastorageusers.blob.core.windows.net/devices-images/trash-can-delete.png"
+                                alt="Borrar">
+                </a>
+              </td>
             </tr>
             </tbody>
           </table>
@@ -53,7 +63,8 @@
       <div class="row">
         <div class="col-sm"></div>
         <div class="col-sm">
-          <a href="#/devices/add" class="btn btn-lg" style="background-color: #47525E; color: #ffffff;">Agregar dispositivo</a>
+          <a href="#/devices/add" class="btn btn-lg" style="background-color: #47525E; color: #ffffff;">Agregar
+            dispositivo</a>
         </div>
         <div class="col-sm"></div>
       </div>

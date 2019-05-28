@@ -48,6 +48,14 @@ export default new Router({
       component: DeviceView
     },
     {
+      path: '/devices/update/:id',
+      name: 'updateDevice'
+    },
+    {
+      path: '/devices/delete/:id',
+      name: 'deleteDevice'
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

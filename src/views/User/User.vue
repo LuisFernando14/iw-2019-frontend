@@ -6,17 +6,17 @@
       <form class="">
         <div class="form-group">
           <label for="name">Nombre</label>
-          <input type="text" autofocus required class="form-control" id="name" v-model="user.name"
+          <input type="text" :disabled="!update" autofocus required class="form-control" id="name" v-model="user.name"
                  placeholder="Nombre">
         </div>
         <div class="form-group">
           <label for="lastname">Apellido</label>
-          <input type="text" required class="form-control" id="lastname" v-model="user.lastName"
+          <input type="text" :disabled="!update" required class="form-control" id="lastname" v-model="user.lastName"
                  placeholder="Apellido">
         </div>
         <div class="form-group">
           <label for="email">Correo electrónico</label>
-          <input type="email" required class="form-control" id="email" v-model="user.email"
+          <input type="email" :disabled="!update" required class="form-control" id="email" v-model="user.email"
                  placeholder="Correo electrónico">
         </div>
         <div v-if="update">
@@ -37,6 +37,11 @@
         </div>
         <input type="button" class="btn btn-primary" @click="manageProfile" :value="buttonTitle">
       </form>
+    </div>
+    <div class="container w-50 p-3">
+      <div v-if="update" class="text-left">
+        <a style="color: red">Borrar mi perfil</a>
+      </div>
     </div>
   </div>
 </template>

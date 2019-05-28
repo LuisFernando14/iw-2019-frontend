@@ -24,7 +24,7 @@
                  @click="iniciarSesion">
         </div>
         <p class="mt-5 mb-3 text-muted">¿Olvidaste tu contraseña?</p>
-        <p>¿No tenes cuenta? Regístrate <a href="/signup/">aquí</a></p>
+        <p>¿No tenes cuenta? Regístrate <a href="#/signup/">aquí</a></p>
       </div>
     </div>
   </div>

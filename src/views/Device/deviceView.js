@@ -1,5 +1,7 @@
 import './deviceView.css'
 
+// import DeleteModal from '@/components/DeleteModal/DeleteModal.vue'
+
 export default {
   name: 'DeviceView',
   mounted () {
@@ -7,7 +9,9 @@ export default {
     // console.log(this.deviceId)
     this.getDeviceById()
   },
-  components: {},
+  components: {
+    // 'DeleteModal': DeleteModal
+  },
   data () {
     return {
       device: {
@@ -32,6 +36,9 @@ export default {
       }).catch((error) => {
         console.log(error)
       })
+    },
+    deleteDevice () {
+      console.log('boorar el device')
     }
   },
   created () {

@@ -5,6 +5,8 @@ export default {
   name: 'Navbar',
   mounted () {
     this.letter = JSON.parse(localStorage.getItem('user')).name.charAt(0).toUpperCase()
+    this.name = JSON.parse(localStorage.getItem('user')).name
+    this.showProfile = localStorage.getItem('user') !== undefined
   },
   components: {
   },
@@ -13,6 +15,8 @@ export default {
   data () {
     return {
       letter: '',
+      name: '',
+      showProfile: false,
       userData: {
         Email: '',
         Password: ''

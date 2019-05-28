@@ -20,7 +20,8 @@ export default {
           localStorage.setItem('user', JSON.stringify(res.data.userData))
           localStorage.setItem('userToken', res.data.token)
           setTimeout(() => {
-            this.$router.push('dashboard')
+            // this.$router.push('dashboard')
+            window.location.replace('#/dashboard')
           }, 500)
         } else {
           this.$notify({
