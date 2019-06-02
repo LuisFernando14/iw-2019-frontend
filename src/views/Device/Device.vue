@@ -17,6 +17,10 @@
           </div>
           <br>
           <div class="row">
+            <input type="number" v-model="device.Plug" style="background-color: white" class="input input-group-text float-none" placeholder="Enchufe">
+          </div>
+          <br>
+          <div class="row">
             <h2 class="float-left">Tipo de dispositivo</h2>
           </div>
           <br>

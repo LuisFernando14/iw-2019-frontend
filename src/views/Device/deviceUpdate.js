@@ -19,7 +19,8 @@ export default {
         description: '',
         status: '',
         isOn: '',
-        userEmail: ''
+        userEmail: '',
+        plug: 0
       },
       devicesType: [
         {

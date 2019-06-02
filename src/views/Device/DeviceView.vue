@@ -23,6 +23,12 @@
           </div>
         </div>
         <div class="row">
+          <label for="plug" class="col-sm-4 col-form-label font-weight-bold">Número de enchufe</label>
+          <div class="col-sm-8">
+            <span id="plug">{{device.plug}}</span>
+          </div>
+        </div>
+        <div class="row">
           <label for="description" class="col-sm-4 col-form-label font-weight-bold">Descripción del dispositivo</label>
           <div class="col-sm-8">
             <span id="description">{{device.description}}</span>

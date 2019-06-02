@@ -36,7 +36,7 @@ export default {
     },
     cambio (event, device) {
       device.isOn = event.value
-      this.$http.put(`/api/devices/${device.id}`, device).then(res => {
+      this.$http.patch('/api/devices/', device).then(res => {
         this.$emit('isOn-changed', res.data.deviceData)
       }).catch((error) => {
         console.log(error)

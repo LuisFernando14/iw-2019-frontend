@@ -21,7 +21,8 @@ export default {
         description: '',
         status: '',
         isOn: '',
-        userEmail: ''
+        userEmail: '',
+        plug: 0
       },
       deleteDeviceText: 'Borrar',
       deviceId: this.$route.params.id,

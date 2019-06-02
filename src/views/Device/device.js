@@ -16,7 +16,8 @@ export default {
         Description: '',
         Status: true,
         IsOn: false,
-        UserEmail: ''
+        UserEmail: '',
+        Plug: 0
       },
       devicesSelection: [
         {

@@ -22,6 +22,13 @@
             </div>
           </div>
           <div class="row">
+            <label for="plug" class="col-sm-4 col-form-label font-weight-bold">Número de enchufe</label>
+            <div class="col-sm-8">
+              <input id="plug" v-model="device.plug" type="text" class="form-control">
+            </div>
+          </div>
+          <br>
+          <div class="row">
             <label for="description" class="col-sm-4 col-form-label font-weight-bold">Descripción del dispositivo</label>
             <div class="col-sm-8">
               <textarea name="" v-model="device.description" class="form-control" id="description" cols="30" rows="5"></textarea>
