@@ -23,6 +23,12 @@
           </div>
         </div>
         <div class="row">
+          <label for="description" class="col-sm-4 col-form-label font-weight-bold">Descripción del dispositivo</label>
+          <div class="col-sm-8">
+            <span id="description">{{device.description}}</span>
+          </div>
+        </div>
+        <div class="row">
           <label for="password" class="col-sm-4 col-form-label font-weight-bold">¿Está habilitado?</label>
           <div class="col-sm-8">
             <span v-if="device.status" id="password">Activo</span>
@@ -43,7 +49,7 @@
             <a :href="'#/devices/update/'+device.id" class="btn btn-info">Editar</a>
           </div>
           <div class="col-sm-2">
-            <a class="btn btn-danger" style="color: white" @click="deleteDevice">Borrar</a>
+            <a class="btn btn-danger" style="color: white" @click="deleteDevice">{{deleteDeviceText}}</a>
           </div>
         </div>
       </div>

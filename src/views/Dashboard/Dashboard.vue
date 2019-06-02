@@ -17,7 +17,7 @@
       </div>
       <div class="row">
         <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-10 table-responsive">
           <table class="table table-bordered">
             <thead style="background-color: #969FAA;" class="">
             <tr>
@@ -42,7 +42,7 @@
                 <span v-else>Deshabilitado</span>
               </td>
               <td>
-                <toggle-button :id="device.id" :value="device.isOn" @change="cambio($event, device)" :sync="true"
+                <toggle-button :disabled="device.status === false" :id="device.id" :value="device.isOn" @change="cambio($event, device)" :sync="true"
                                :labels="{checked: 'ON', unchecked: 'OFF'}"/>
               </td>
               <td>
@@ -50,7 +50,7 @@
                                 alt="Modificar">
                 </a>
                 |
-                <a :href="'#/devices/delete/'+device.id"><img src="https://datastorageusers.blob.core.windows.net/devices-images/trash-can-delete.png"
+                <a :href="'#/devices/view/'+device.id"><img src="https://datastorageusers.blob.core.windows.net/devices-images/trash-can-delete.png"
                                 alt="Borrar">
                 </a>
               </td>
@@ -69,6 +69,7 @@
         <div class="col-sm"></div>
       </div>
     </div>
+    <br>
   </div>
 </template>
 <script src="./dashboard.js"></script>

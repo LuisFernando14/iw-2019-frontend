@@ -23,7 +23,9 @@ export default {
         isOn: '',
         userEmail: ''
       },
-      deviceId: this.$route.params.id
+      deleteDeviceText: 'Borrar',
+      deviceId: this.$route.params.id,
+      deleteDev: false
     }
   },
   methods: {
@@ -39,6 +41,27 @@ export default {
     },
     deleteDevice () {
       console.log('boorar el device')
+      const userEmail = JSON.parse(localStorage.getItem('user'))
+      this.$http.delete(`/api/devices/${userEmail.email}/${this.deviceId}`).then(res => {
+        if (res.data.correct) {
+          window.location.replace('#/dashboard')
+          this.$notify({
+            group: 'foo',
+            position: 'top center',
+            type: 'success',
+            title: 'Mensaje del sistema',
+            text: 'Dispositivo borrado correctamente'
+          })
+        }
+      }).catch((error) => {
+        this.$notify({
+          group: 'foo',
+          position: 'top center',
+          type: 'success',
+          title: 'Mensaje del sistema',
+          text: error
+        })
+      })
     }
   },
   created () {

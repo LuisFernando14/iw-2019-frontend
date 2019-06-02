@@ -26,6 +26,7 @@ export default {
         console.log('en la petiion')
         console.log(res.data)
         this.user = res.data.userData
+        this.user.password = ''
       }).catch((error) => {
         console.log(error)
       })
@@ -37,6 +38,42 @@ export default {
         return
       }
       console.log('vamos a actualizar')
+      console.log(this.user)
+      this.$http.put(`/api/users/${this.user.email}`, this.user).then(res => {
+        if (res.data.correct) {
+          window.location.replace('#/profile')
+          this.$notify({
+            group: 'foo',
+            position: 'top center',
+            type: 'success',
+            title: 'Mensaje del sistema',
+            text: 'Usuario actualizado correctamente'
+          })
+        }
+      }).catch((error) => {
+        this.$notify({
+          group: 'foo',
+          position: 'top center',
+          type: 'success',
+          title: 'Ha ocurrido un error',
+          text: error
+        })
+      })
+    },
+    deleteProfile () {
+      this.$http.delete(`/api/users/${this.user.email}`).then(res => {
+        if (res.data.correct) {
+          window.location.replace('#/signup')
+        }
+      }).catch((error) => {
+        this.$notify({
+          group: 'foo',
+          position: 'top center',
+          type: 'success',
+          title: 'Ha ocurrido un error',
+          text: error
+        })
+      })
     }
   },
   created () {

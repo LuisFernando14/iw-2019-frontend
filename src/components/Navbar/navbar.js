@@ -4,8 +4,10 @@ import './navbar.css'
 export default {
   name: 'Navbar',
   mounted () {
-    this.letter = JSON.parse(localStorage.getItem('user')).name.charAt(0).toUpperCase()
-    this.name = JSON.parse(localStorage.getItem('user')).name
+    let user = JSON.parse(localStorage.getItem('user'))
+    let userName = user.name
+    this.letter = userName.charAt(0).toUpperCase()
+    this.name = userName
     this.showProfile = localStorage.getItem('user') !== undefined
   },
   components: {
@@ -24,10 +26,18 @@ export default {
     }
   },
   methods: {
-    logOut () {
+    cerrarSesion () {
+      console.log('vamos a cerrar sesipon')
+      localStorage.removeItem('userToken')
+      localStorage.removeItem('user')
+      this.showProfile = false
+      window.location.replace('#/login')
     }
   },
   created () {
-    console.log('hola en la creación de agregar usuario')
+    console.log('creacion de la navbar')
+  },
+  updated () {
+    console.log('nada')
   }
 }

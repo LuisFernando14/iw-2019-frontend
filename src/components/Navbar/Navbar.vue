@@ -25,7 +25,7 @@
                  aria-labelledby="navbarDropdownMenuLink-55">
               <a class="dropdown-item" href="#/profile">Mi perfil</a>
               <a class="dropdown-item" href="#">Mis rutinas</a>
-              <a class="dropdown-item" href="#">Cerrar sesión</a>
+              <a class="dropdown-item" @click="cerrarSesion">Cerrar sesión</a>
             </div>
           </li>
         </ul>

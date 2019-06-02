@@ -27,7 +27,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="newPassword">Nueva contraseña</label>
-              <input type="password" required class="form-control" id="newPassword" placeholder="Nueva contraseña">
+              <input v-model="user.password" value=" " type="password" required class="form-control" id="newPassword" placeholder="Nueva contraseña">
             </div>
             <div class="form-group col-md-6">
               <label for="confirmNewPassword">Confirmar nueva contraseña</label>

@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+// import Home from './views/Home.vue'
 import Login from './views/Login/Login.vue'
 import Dashboard from './views/Dashboard/Dashboard.vue'
 import Device from './views/Device/Device.vue'
 import User from './views/User/User.vue'
 import Register from './views/Register/Register.vue'
 import DeviceView from './views/Device/DeviceView.vue'
+import DeviceUpdate from './views/Device/DeviceUpdate.vue'
 
 Vue.use(Router)
 
@@ -15,45 +16,70 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      redirect: '/dashboard'
     },
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: Login,
+      meta: {
+        guest: true
+      }
     },
     {
       path: '/signup',
       name: 'register',
-      component: Register
+      component: Register,
+      meta: {
+        guest: true
+      }
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: Dashboard
+      component: Dashboard,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/profile',
       name: 'profile',
-      component: User
+      component: User,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/devices/add',
       name: 'device',
-      component: Device
+      component: Device,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/devices/view/:id',
       name: 'deviceId',
-      component: DeviceView
+      component: DeviceView,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/devices/update/:id',
-      name: 'updateDevice'
+      name: 'updateDevice',
+      component: DeviceUpdate,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/devices/delete/:id',
-      name: 'deleteDevice'
+      name: 'deleteDevice',
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/about',
