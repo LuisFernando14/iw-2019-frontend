@@ -11,8 +11,8 @@ import ActionHub from './hubs/action-hub.js'
 
 Vue.config.productionTip = false
 // Setup axios as the Vue default $http library
-axios.defaults.baseURL = 'http://localhost:5000'
-// axios.defaults.baseURL = 'https://smarthouse48.azurewebsites.net' // same as the Url the server listens to
+// axios.defaults.baseURL = 'http://localhost:5000'
+axios.defaults.baseURL = 'https://smarthouse48.azurewebsites.net' // same as the Url the server listens to
 Vue.prototype.$http = axios
 Vue.use(Notifications)
 Vue.use(ToggleButton)
