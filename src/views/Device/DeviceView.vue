@@ -48,6 +48,13 @@
             <span v-else>Apagado</span>
           </div>
         </div>
+        <br>
+        <div class="row">
+          <h4>Uso del dispositivo</h4>
+          <div class="col-sm-12">
+            <p>{{deviceUsage}}</p>
+          </div>
+        </div>
       </div>
       <div class="text-right">
         <div class="row">

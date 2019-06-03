@@ -8,6 +8,7 @@ export default {
     // this.getDevices()
     // console.log(this.deviceId)
     this.getDeviceById()
+    this.getDeviceUsage()
   },
   components: {
     // 'DeleteModal': DeleteModal
@@ -24,6 +25,7 @@ export default {
         userEmail: '',
         plug: 0
       },
+      deviceUsage: '',
       deleteDeviceText: 'Borrar',
       deviceId: this.$route.params.id,
       deleteDev: false
@@ -39,6 +41,16 @@ export default {
       }).catch((error) => {
         console.log(error)
       })
+    },
+    getDeviceUsage () {
+      const userEmail = JSON.parse(localStorage.getItem('user')).email
+      this.$http.get(`/api/devices/${this.deviceId}/${userEmail}/all`).then(res => {
+        if (res.data.correct) {
+          this.deviceUsage = res.data.data
+        }
+      }).catch((error) => {
+        console.log(error)
+      });
     },
     deleteDevice () {
       console.log('boorar el device')
